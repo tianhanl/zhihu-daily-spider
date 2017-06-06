@@ -19,5 +19,8 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.1",
     "superagent": "^3.5.2"
+  },
+  "devDependencies": {
+    "mongoose": "^4.10.4"
   }
 }

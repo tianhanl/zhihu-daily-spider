@@ -1,18 +1,17 @@
 var http = require('http');
-var requestStoryList = require('./spider').requestStoryList;
+var spider = require('./spider');
 
 
 
 function start() {
     function onRequest(req, res) {
         res.setHeader('Content-Type', 'text/plain;charset=UTF-8');
-        requestStoryList().then(function(stories) {
-            console.log(stories);
+        spider.requestStoryList().then(function (stories) {
             res.write(JSON.stringify({
                 stories: stories
             }));
             res.end();
-        }).catch(function(err) {
+        }).catch(function (err) {
             console.log(err);
         });
     }
